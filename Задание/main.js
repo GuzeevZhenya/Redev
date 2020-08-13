@@ -3,7 +3,7 @@ function family(name, age, gender) {
     this.age = age;
     this.gender = gender;
     this.sayFullInfo = function() {
-        console.log(this.name + " " + this.age + " " + this.gender + " ");
+        return `Имя: ${name}, Возраст ${age}, Пол: ${gender}`;
     };
     this.createWork = function(work) {
         console.log(work);
@@ -11,21 +11,22 @@ function family(name, age, gender) {
 }
 
 var zhenya = new family('zhenya', 24, 'male');
-zhenya.sayFullInfo();
+console.log(zhenya.sayFullInfo());
 zhenya.createWork('Программист');
 
+
 var vania = new family('vania', 32, 'male');
-vania.sayFullInfo();
+console.log(vania.sayFullInfo());
 vania.createWork('Техник-технолог');
 
 var sania = new family('sania', 25, 'male');
-sania.sayFullInfo();
+console.log(sania.sayFullInfo());
 sania.createWork('Программист');
 
 var sergei = new family('sergei', 27, 'male');
-sergei.sayFullInfo();
+console.log(sergei.sayFullInfo());
 sergei.createWork('Экономист');
 
 var andrei = new family('andrei', 14, 'male');
-andrei.sayFullInfo();
+console.log(andrei.sayFullInfo());
 andrei.createWork('Школьник');
