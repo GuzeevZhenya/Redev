@@ -3,26 +3,29 @@ function family(name, age, gender) {
     this.age = age;
     this.gender = gender;
     this.sayFullInfo = function () {
-        return this.name + " " + this.age + " " + this.gender + " ";
+        console.log(this.name + " " + this.age + " " + this.gender + " ");
     };
     this.createWork = function (work) {
-        return work;
+        this.work = work;
     };
 }
 
-var zhenya = new family('zhenya', 24, 'male', work = "Программист");
-console.log(zhenya.sayFullInfo());
-console.log(zhenya.createWork(work));
+var zhenya = new family('zhenya', 24, 'male');
+zhenya.sayFullInfo();
+zhenya.createWork('Программист');
 
-var vania = new family('vania', 32, 'male', work = "Техник-технолог");
-console.log(vania.sayFullInfo());
-console.log(vania.createWork(work));
-var sania = new family('sania',25, 'male', work = "Программист");
-console.log(sania.sayFullInfo());
-console.log(sania.createWork(work));
-var sergei = new family('sergei', 27, 'male', work = "Экономист");
-console.log(sergei.sayFullInfo());
-console.log(sergei.createWork(work));
-var andrei = new family('andrei', 14, 'male', work = "Школьник");
-console.log(andrei.sayFullInfo());
-console.log(andrei.createWork(work));
+var vania = new family('vania', 32, 'male');
+vania.sayFullInfo();
+zhenya.createWork('Техник-технолог');
+
+var sania = new family('sania', 25, 'male');
+sania.sayFullInfo();
+zhenya.createWork('Программист');
+
+var sergei = new family('sergei', 27, 'male');
+sergei.sayFullInfo();
+zhenya.createWork('Экономист');
+
+var andrei = new family('andrei', 14, 'male');
+andrei.sayFullInfo();
+zhenya.createWork('Школьник');
