@@ -1,4 +1,5 @@
-function family(name, age, gender) {
+function Family(name, age, gender) {
+
     this.name = name;
     this.age = age;
     this.gender = gender;
@@ -8,25 +9,38 @@ function family(name, age, gender) {
     this.createWork = function(work) {
         console.log(work);
     };
+
 }
 
-var zhenya = new family('zhenya', 24, 'male');
+
+function oldPerson(age) {
+
+}
+
+function averageAge(age) {
+
+}
+
+function deletePerson() {
+
+}
+
+var zhenya = new Family('zhenya', 24, 'male');
 console.log(zhenya.sayFullInfo());
 zhenya.createWork('Программист');
 
-
-var vania = new family('vania', 32, 'male');
+var vania = new Family('vania', 32, 'male');
 console.log(vania.sayFullInfo());
 vania.createWork('Техник-технолог');
 
-var sania = new family('sania', 25, 'male');
+var sania = new Family('sania', 25, 'male');
 console.log(sania.sayFullInfo());
 sania.createWork('Программист');
 
-var sergei = new family('sergei', 27, 'male');
+var sergei = new Family('sergei', 27, 'male');
 console.log(sergei.sayFullInfo());
 sergei.createWork('Экономист');
 
-var andrei = new family('andrei', 14, 'male');
+var andrei = new Family('andrei', 14, 'male');
 console.log(andrei.sayFullInfo());
 andrei.createWork('Школьник');
