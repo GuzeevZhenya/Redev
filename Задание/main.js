@@ -2,10 +2,10 @@ function Family(name, age, gender) {
     this.name = name;
     this.age = age;
     this.gender = gender;
-    this.sayFullInfo = function() {
+    this.sayFullInfo = function () {
         return `Имя: ${name}, Возраст ${age}, Пол: ${gender}`;
     };
-    this.createWork = function(work) {
+    this.createWork = function (work) {
         this.work = work;
     };
 
@@ -63,8 +63,8 @@ console.log(oldestPerson(allPerson));
 // }
 // console.log(averageAge(allPerson));
 //2. Средний возраст
-let totalAge = allPerson.reduce((acc, user) => (acc + user.age), 0);
-totalAge = totalAge / 2;
+let totalAge = allPerson.reduce((acc, user) => (acc + user.age), 0) / allPerson.length;
+
 console.log(totalAge);
 
 
