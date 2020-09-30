@@ -2,10 +2,10 @@ function Family(name, age, gender) {
     this.name = name;
     this.age = age;
     this.gender = gender;
-    this.sayFullInfo = function () {
+    this.sayFullInfo = function() {
         return `Имя: ${name}, Возраст ${age}, Пол: ${gender}`;
     };
-    this.createWork = function (work) {
+    this.createWork = function(work) {
         this.work = work;
     };
 
@@ -25,11 +25,11 @@ tania.createWork('Программист');
 
 var sergei = new Family('sergei', 24, 'male');
 console.log(sergei.sayFullInfo());
-sergei.createWork('Экономист');
+// sergei.createWork('Экономист');
 
 var andrei = new Family('andrei', 24, 'male');
 console.log(andrei.sayFullInfo());
-andrei.createWork('Безработный');
+// andrei.createWork('Безработный');
 
 let allPerson = [];
 allPerson.push(zhenya);
@@ -69,13 +69,15 @@ console.log(totalAge);
 
 
 
-//3.Удаление одного члена семьи
+// 3.Удаление одного члена семьи
 // function removePersone(allPerson) {
 //     allPerson.pop();
 //     return allPerson;
 // }
-// console.log(removePersone(allPerson));
 
+
+let removePerson = (item) => item.pop();
+console.log(removePerson(allPerson));
 //4.Нахожднение женщин
 
 // function findWomen(women) {
@@ -88,18 +90,20 @@ console.log(totalAge);
 
 // let allWomen = allPerson.map((index) => (index.gender === 'female'));
 // let allWomen = allPerson.find(item => item.gender === 'female');
-let allWomen = (allPerson) => allPerson.filter((item) => (item.gender === 'female'));
+let allWomen = (allPerson) => allPerson.filter((item) => item.gender === 'female');
 console.log(allWomen(allPerson));
 
 //5 Поиск безработных
-const allUnemployed = (allPerson) => allPerson.filter(item => item.work === 'Безработный');
+const allUnemployed = (allPerson) => allPerson.filter((item) => item.work === undefined);
 console.log(allUnemployed(allPerson));
 
 
 //6 Добавить нового члена семьи
-function createNewPerson(person) {
-    return allPerson.push(person);
-}
+// function createNewPerson(person) {
+//     return allPerson.push(person);
+// }
+
+let createNewPerson = (item) => allPerson.push(item);
 let petia = new Family('petia', 21, 'male');
 petia.createWork('Адвокат');
 createNewPerson(petia);
@@ -119,11 +123,13 @@ console.log(allWork(allPerson));
 
 
 //9 Узнать есть ли люди с одинаковым возрастом
-let sameAge = allPerson.filter((item, index) => {
-    return allPerson.indexOf(item) !== index;
+let sameAge = allPerson.forEach((item, index) => {
+    allPerson.forEach((e, i) => {
+        if (i !== index && e === item) {
+
+        }
+    });
 });
-
-
 
 console.log(sameAge);
 
@@ -142,8 +148,9 @@ console.log(sameAge);
 
 
 let yearsOld = (allPerson) => allPerson.map(item => {
-    let now = 2020;
-    return now - item.age;
+    let now = new Date();
+    let getYear = now.getFullYear()
+    return getYear - item.age;
 })
 
 console.log(yearsOld(allPerson));
