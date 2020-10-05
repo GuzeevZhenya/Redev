@@ -52,7 +52,7 @@ console.log(allPerson);
 
 //1.Возраст самого старшнего
 let oldestPerson = (allPerson) => allPerson
-    .sort((a, b) => a.age - b.age)[allPerson.length - 1];
+    .sort((a, b) => b.age - a.age)[0];
 console.log(oldestPerson(allPerson));
 
 //2. Средний возраст
@@ -94,7 +94,7 @@ let allWomen = (allPerson) => allPerson.filter((item) => item.gender === 'female
 console.log(allWomen(allPerson));
 
 //5 Поиск безработных
-const allUnemployed = (allPerson) => allPerson.filter((item) => item.work === undefined);
+const allUnemployed = (allPerson) => allPerson.filter((item) => !item.work);
 console.log(allUnemployed(allPerson));
 
 
@@ -117,21 +117,25 @@ console.log(allMen(allPerson));
 
 //8 Список всех работ
 
-let allWork = (allPerson) => allPerson.map(item => item.work);
+let allWork = (allPerson) => allPerson.map(item => item.work)
+    .filter(item => item);
 
 console.log(allWork(allPerson));
 
 
 //9 Узнать есть ли люди с одинаковым возрастом
-let sameAge = allPerson.forEach((item, index) => {
+allPerson.forEach((item, index) => {
     allPerson.forEach((e, i) => {
-        if (i !== index && e === item) {
 
+        if (i !== index && e === item) {
+            console.log(e);
         }
     });
 });
 
-console.log(sameAge);
+
+
+
 
 
 
